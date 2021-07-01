@@ -11,3 +11,4 @@ npm install
 ```
 npm run serve
 ```
+Go to http://localhost:8080

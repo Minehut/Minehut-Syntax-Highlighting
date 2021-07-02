@@ -1,23 +1,90 @@
-#This command has a cooldown of 1 minute,
-#meaning a player can only use it each minute.
-#If a player tries to use it more than once in a minute,
-#the cooldown message is shown
+#! 
+#! Test code
+#! Originally made by SkriptDev (Ayham Al-Ali) for Full's server (Minehut Server)
+#! 
 
-command /cake:
-	description: Give the command sender some cake!
-	cooldown: 1 minute
-	cooldown message: You need to wait &l%remaining time% &rto use this command again!
-	cooldown bypass: cake.nocooldown
-	
-	#See https://skriptlang.github.io/Skript/expressions.html#ExprCmdCooldownInfo for more info
-	#on the expressions you can use in a cooldown message.
-	
+options:
+	compass: glowing compass named "&e&lGames Selector" with lore "&7Click to open the games menu " and "  " and " &eYou can also access this using &f/games " and "&cNot Moveable"
+	help-item: glowing paper named "&6&lHelp" with lore "&7Click to show the help message" and "&cNot Moveable"
+	rules-item: glowing barrier named "&c&lRules" with lore "&7Click to open the rules menu" and "&cNot Moveable"
+
+	world: "lobby"
+
+
+on inventory click:
+	player's world = {@world}
+	if lore of event-item contains "&cNot Moveable":
+		cancel event
+	else if "%inventory action%" = "swap with hotbar":
+		lore of slot hotbar button of player contains "&cNot Moveable"
+		cancel event
+
+on click:
+	"%player's world%" = {@world}
+
+	if player's tool = {@compass}:
+		cancel event
+		openMinigamesMenu(player)
+		send "&aOpening Minigames Menu.."
+
+on respawn:
+	wait 2 tick
+	world of respawn location = {@world}
+
+	wait 1 ticks
+	clear player's inventory
+	set slot 0 of player's inventory to {@help-item}
+	set slot 8 of player's inventory to {@rules-item}
+	set slot 4 of player's inventory to {@compass}
+
+function showHelpMessage(p: player, page: int = 1):
+	if {_page} >= 4:
+		send "&cPage doesn't exist." to {_p}
+		stop
+
+	send " " to {_p}
+	send "&e&lServer Help &f&l##%{_page}%" to {_p}
+	send " " to {_p}
+	if {_page} = 1:
+		send " &6/help &7&oShows this message" to {_p}
+		send " &6/rules &7&oShows server's rules" to {_p}
+		send " &6/spawn &7&oGo to server's lobby" to {_p}
+		send " &6/games &7&oOpen games menu" to {_p}
+		send " &6/join [game] &7&oJoin a game" to {_p}
+		send " &6/leave &7&oLeave the game" to {_p}
+		send " &6/points &7&oShows your points" to {_p}
+		send " &2/zvsh stats &7&oShows your ZvsH game stats" to {_p}
+		send " &b/has stats &7&oShows your HaS game stats" to {_p}
+		send " &2/respawn &7&oRespawn as a zombie in &2ZvsH" to {_p}
+on load:
+	delete {Hub::server-rules::*} and {Hub::zvsh-rules::*} and {Hub::has-rules::*} and {Hub::void-rules::*}
+
+	add " " to {Hub::server-rules::*}
+	add "&6(1) &eHacking &7» &6Perm Ban &7&o(No warning)" to {Hub::server-rules::*}
+	add "&6(2) &eAdvertisting &7» &6Perm Ban/Perm Mute" to {Hub::server-rules::*}
+	add "&6(3) &eSpaming &7» &6Warn &c>&6 TempMute" to {Hub::server-rules::*}
+	add "&6(4) &eSwearing &7» &6Warn &c>&6 TempMute" to {Hub::server-rules::*}
+	add "&6(5) &eInappropriate behaviour &7» &6Warn &c>&6 TempMute" to {Hub::server-rules::*}
+	add "&c* All rules could lead to a fair TempBan if broken too many times" to {Hub::server-rules::*}
+	add " " to {Hub::server-rules::*}
+
+function openMinigamesMenu(p: player):
+	#! Note: {CustomHeads::***} is set manually using eval commands
+
+	open virtual chest with 5 rows named "&e&lMinigames Menu" to {_p}
+	format gui slot 20 of {_p} with {ZvsH::class::zombie::head} named "&2&lInfected &e&lClassic" with lore split "&e&n%size of all players in world ""Spawn""%&7 playing now|| ||&7Original version of" at "||" to run:
+		close {_p}'s inventory
+		teleport {_p} to {ZvsH::settings::spawnLoc}
+		send "&aSending you to %name of gui-item%&a game."
+	teleport player to {Hub::spawn-loc}
+
+command /games:
+	aliases: minigames
 	trigger:
-		if the player's inventory doesn't have space for cake:
-			send "&cYou don't have space for cake in your inventory! :("
-			cancel command cooldown 
-	  		#This is used so the player doesn't have to wait 1 minute before
-			#using the command again if they didn't have space for cake.
-		else:
-			give cake to the player
-			send "Here you go!"
+		if isPlayerInAnyGame(player) != "none":
+			send "&cYou can't do this while in a game."
+			stop
+
+		send "&aOpening Minigames Menu.."
+		openMinigamesMenu(player)
+		stop

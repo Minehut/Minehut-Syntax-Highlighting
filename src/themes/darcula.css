@@ -3,51 +3,110 @@
     From IntelliJ IDEA by JetBrains
  */
 
-.cm-s-darcula  { font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;}
-.cm-s-darcula.CodeMirror { background: #2B2B2B; color: #A9B7C6; }
-
-.cm-s-darcula span.cm-meta { color: #BBB529; }
-.cm-s-darcula span.cm-number { color: #6897BB; }
-.cm-s-darcula span.cm-keyword { color: #CC7832; line-height: 1em; font-weight: bold; }
-.cm-s-darcula span.cm-def { color: #A9B7C6; font-style: italic; }
-.cm-s-darcula span.cm-variable { color: #9876AA; }
-.cm-s-darcula span.cm-variable-2 { color: #aa767a; }
-.cm-s-darcula span.cm-variable-3 { color: #76aa90; }
-.cm-s-darcula span.cm-type { color: #AABBCC; font-weight: bold; }
-.cm-s-darcula span.cm-property { color: #FFC66D; }
-.cm-s-darcula span.cm-operator { color: #A9B7C6; }
-.cm-s-darcula span.cm-string { color: #6A8759; }
-.cm-s-darcula span.cm-string-2 { color: #6A8759; }
-.cm-s-darcula span.cm-comment { color: #46b45e; font-style: italic; }
-.cm-s-darcula span.cm-link { color: #CC7832; }
-.cm-s-darcula span.cm-atom { color: #CC7832; }
-.cm-s-darcula span.cm-error { color: #BC3F3C; }
-.cm-s-darcula span.cm-tag { color: #629755; font-weight: bold; font-style: italic; text-decoration: underline; }
-.cm-s-darcula span.cm-attribute { color: #6897bb; }
-.cm-s-darcula span.cm-qualifier { color: #6A8759; }
-.cm-s-darcula span.cm-bracket { color: #A9B7C6; }
-.cm-s-darcula span.cm-builtin { color: #FF9E59; }
-.cm-s-darcula span.cm-special { color: #FF9E59; }
-.cm-s-darcula span.cm-matchhighlight { color: #FFFFFF; background-color: rgba(50, 89, 48, .7); font-weight: normal;}
-.cm-s-darcula span.cm-searching { color: #FFFFFF; background-color: rgba(61, 115, 59, .7); font-weight: normal;}
-
-.cm-s-darcula .CodeMirror-cursor { border-left: 1px solid #A9B7C6; }
-.cm-s-darcula .CodeMirror-activeline-background { background: #323232; }
-.cm-s-darcula .CodeMirror-gutters { background: #313335; border-right: 1px solid #313335; }
-.cm-s-darcula .CodeMirror-guttermarker { color: #FFEE80; }
-.cm-s-darcula .CodeMirror-guttermarker-subtle { color: #D0D0D0; }
-.cm-s-darcula .CodeMirrir-linenumber { color: #606366; }
-.cm-s-darcula .CodeMirror-matchingbracket { background-color: #3B514D; color: #FFEF28 !important; font-weight: bold; }
-
-.cm-s-darcula div.CodeMirror-selected { background: #214283; }
-
-.CodeMirror-hints.darcula {
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  color: #9C9E9E;
-  background-color: #3B3E3F !important;
-}
-
-.CodeMirror-hints.darcula .CodeMirror-hint-active {
-  background-color: #494D4E !important;
-  color: #9C9E9E !important;
-}
+ .cm-s-darcula  { font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;}
+ .cm-s-darcula.CodeMirror { background: #2B2B2B; color: #A9B7C6; }
+ 
+ .cm-s-darcula span.cm-meta { color: #BBB529; }
+ .cm-s-darcula span.cm-number { color: #6897BB; }
+ .cm-s-darcula span.cm-keyword { color: #CC7832; line-height: 1em; font-weight: bold; }
+ .cm-s-darcula span.cm-def { color: #A9B7C6; font-style: italic; }
+ .cm-s-darcula span.cm-link { color: #CC7832; }
+ .cm-s-darcula span.cm-atom { color: #CC7832; }
+ .cm-s-darcula span.cm-error { color: #BC3F3C; }
+ .cm-s-darcula span.cm-tag { color: #629755; font-weight: bold; font-style: italic; text-decoration: underline; }
+ .cm-s-darcula span.cm-attribute { color: #6897bb; }
+ .cm-s-darcula span.cm-qualifier { color: #6A8759; }
+ .cm-s-darcula span.cm-bracket { color: #A9B7C6; }
+ .cm-s-darcula span.cm-builtin { color: #FF9E59; }
+ .cm-s-darcula span.cm-special { color: #FF9E59; }
+ .cm-s-darcula span.cm-matchhighlight { color: #FFFFFF; background-color: rgba(50, 89, 48, .7); font-weight: normal;}
+ .cm-s-darcula span.cm-searching { color: #FFFFFF; background-color: rgba(61, 115, 59, .7); font-weight: normal;}
+ 
+ .cm-s-darcula .CodeMirror-cursor { border-left: 1px solid #A9B7C6; }
+ .cm-s-darcula .CodeMirror-activeline-background { background: #323232; }
+ .cm-s-darcula .CodeMirror-gutters { background: #313335; border-right: 1px solid #313335; }
+ .cm-s-darcula .CodeMirror-guttermarker { color: #FFEE80; }
+ .cm-s-darcula .CodeMirror-guttermarker-subtle { color: #D0D0D0; }
+ .cm-s-darcula .CodeMirrir-linenumber { color: #606366; }
+ .cm-s-darcula .CodeMirror-matchingbracket { background-color: #3B514D; color: #FFEF28 !important; font-weight: bold; }
+ 
+ .cm-s-darcula div.CodeMirror-selected { background: #214283; }
+ 
+ .CodeMirror-hints.darcula {
+   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+   color: #9C9E9E;
+   background-color: #3B3E3F !important;
+ }
+ 
+ .CodeMirror-hints.darcula .CodeMirror-hint-active {
+   background-color: #494D4E !important;
+   color: #9C9E9E !important;
+ }
+ 
+ 
+ 
+ 
+ 
+ /* Skrit Highlightings */
+ .cm-s-darcula span.cm-comment-line-number-sign { font-style: italic; color: #5D8A3B; }
+ .cm-s-darcula span.cm-comment-line-number-sign-important { font-style: italic; color: #DD5855; }
+ .cm-s-darcula span.cm-comment-line-number-sign-important-two { font-style: italic; color: #5F5F5F; }
+ .cm-s-darcula span.cm-section { font-weight: bold; color: #E3E3E3; }
+ .cm-s-darcula span.cm-section-meta { font-style: italic; color: #DBDBDB; }
+ .cm-s-darcula span.cm-operator { color: #BDFF4A; }
+ .cm-s-darcula span.cm-control { font-weight: bold; font-style: italic; color: #D885FCD9; }
+ .cm-s-darcula span.cm-string-quoted-double { color: #C3E88D; }
+ .cm-s-darcula span.cm-string-quoted-double-variable { font-style: italic; color: #E5F8FF; }
+ .cm-s-darcula span.cm-variable-other { color: #F8516D; }
+ .cm-s-darcula span.cm-variable-external { color: #FFF952; font-style: italic; }
+ .cm-s-darcula span.cm-effect { color: #EDEDED; font-style: italic; }
+ .cm-s-darcula span.cm-control-boolean-false { font-weight: bold; font-style: italic; color: #FF5555; background: "#FF7A7A1F" }
+ .cm-s-darcula span.cm-control-boolean-true { font-weight: bold; font-style: italic; color: #55FF55; background: "#66FF7A2B" }
+ .cm-s-darcula span.cm-stop { color: #DD5855; font-style: italic ; background: "#FF8C8C1F" }
+ .cm-s-darcula span.cm-now { color: #F77669; font-style: italic; font-weight: bold; }
+ .cm-s-darcula span.cm-entity-playerobjects { color: #F9FF8F; font-style: italic; font-weight: bold; }
+ .cm-s-darcula span.cm-operator-borders { color: #2BDFFF; font-style: italic; }
+ .cm-s-darcula span.cm-expressions { color: #EDEDED; font-style: italic; }
+ .cm-s-darcula span.cm-control-others { color: #BA6DE3D9; }
+ .cm-s-darcula span.cm-commandargs { color: #FFBC2B; }
+ .cm-s-darcula span.cm-arguments { color: #FFFFFF; }
+ .cm-s-darcula span.cm-variable-parameter { color: #F8516D; font-style: italic; }
+ .cm-s-darcula span.cm-variable-string { color: #FFFFFF; }
+ .cm-s-darcula span.cm-glowing { color: #FFF942EB; background: "#FFFF3317"; font-weight: bold; }
+ .cm-s-darcula span.cm-time { color: #FFFFFF; font-style: italic; font-weight: bold; }
+ .cm-s-darcula span.cm-gui { color: #4596FFEB; }
+ .cm-s-darcula span.cm-addonmirror-method { color: #E3E3E3; font-style: italic; }
+ .cm-s-darcula span.cm-addonmirror-effects { color: #FF3838F0; font-style: italic; font-weight: bold; }
+ .cm-s-darcula span.cm-inventory-expression { color: #DB8CFF; font-weight: bold; font-style: italic; }
+ .cm-s-darcula span.cm-string-quoted-double-newline { color: #FF3D3D; font-weight: bold }
+ .cm-s-darcula span.cm-text-colors { font-style: italic; color: #FFFFFF; }
+ .cm-s-darcula span.cm-quoted-double-options { color: #FFFFFF; font-style: italic; font-weight: bold; }
+ .cm-s-darcula span.cm-command { color: #FFFFFF; font-weight: bold; font-style: italic; }
+ .cm-s-darcula span.cm-options { font-weight: bold; font-style: italic; color: #F0F0F0; }
+ .cm-s-darcula span.cm-color-0 { color: #4D4D4D; }
+ .cm-s-darcula span.cm-color-1 { color: #2B44FF; }
+ .cm-s-darcula span.cm-color-2 { color: #00B020; }
+ .cm-s-darcula span.cm-color-3 { color: #009C97; }
+ .cm-s-darcula span.cm-color-4 { color: #AD0000; }
+ .cm-s-darcula span.cm-color-5 { color: #E600B8; }
+ .cm-s-darcula span.cm-color-6 { color: #FF9D0A; }
+ .cm-s-darcula span.cm-color-7 { color: #A6A6A6; }
+ .cm-s-darcula span.cm-color-8 { color: #666666; }
+ .cm-s-darcula span.cm-color-9 { color: #0077FFE6; }
+ .cm-s-darcula span.cm-color-a { color: #51FF00; }
+ .cm-s-darcula span.cm-color-b { color: #00FFFF; }
+ .cm-s-darcula span.cm-color-c { color: #FF4747; }
+ .cm-s-darcula span.cm-color-d { color: #FF3686; }
+ .cm-s-darcula span.cm-color-e { color: #FFF530; }
+ .cm-s-darcula span.cm-color-f { color: #FFFFFFE6; }
+ .cm-s-darcula span.cm-color-m { font-style: italic; color: #FFFFFF; }
+ .cm-s-darcula span.cm-color-nunderline { color: #FFFFFF; }
+ .cm-s-darcula span.cm-color-l { font-weight: bold; color: #FFFFFF; }
+ .cm-s-darcula span.cm-color-o { font-style: italic; color: #FFFFFF; }
+ .cm-s-darcula span.cm-color-k { font-weight: bold; font-style: italic; color: #FFFFFF; }
+ .cm-s-darcula span.cm-color-r { color: #FFFFFF; }
+ .cm-s-darcula span.cm-types { color: #FFBC2B; }
+ .cm-s-darcula span.cm-loopobjects { color: #FFC94C }
+ .cm-s-darcula span.cm-option { color: #FFFFFF }
+ .cm-s-darcula span.cm-string { color: #FFFFFF }
+ .cm-s-darcula span.cm-everything { color: #D6D6D6DB; }

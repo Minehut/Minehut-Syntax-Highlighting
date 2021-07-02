@@ -17,6 +17,8 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/lib/codemirror.js";
 import "../themes/darcula.css";
 import defaultCode from "!raw-loader!../default-code.txt";
+import { defineSkriptVariableMode } from "../modes/skript-variable.js";
+import { defineSkriptStringMode } from "../modes/skript-string.js";
 import { defineSkriptMode } from "../modes/skript.js";
 
 export default {
@@ -44,6 +46,8 @@ export default {
     this.currentFileContent = defaultCode;
 
     // If you make a new syntax mode, import the new defining function and change the mode here to test
+    defineSkriptVariableMode(CodeMirror)
+    defineSkriptStringMode(CodeMirror)
     defineSkriptMode(CodeMirror);
     this.editor.setOption("mode", "skript");
 

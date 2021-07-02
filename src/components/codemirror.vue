@@ -16,10 +16,9 @@ import "codemirror/addon/mode/simple.js";
 import "codemirror/lib/codemirror.css";
 import "codemirror/lib/codemirror.js";
 import "../themes/darcula.css";
+import "../themes/skript-dark.css";
 import defaultCode from "!raw-loader!../default-code.txt";
-import { defineSkriptVariableMode } from "../modes/skript-variable.js";
-import { defineSkriptStringMode } from "../modes/skript-string.js";
-import { defineSkriptMode } from "../modes/skript.js";
+import { defineSkriptMode, defineSkriptStringMode, defineSkriptVariableMode } from "../modes/skript.js";
 
 export default {
   name: "CodeMirror",
